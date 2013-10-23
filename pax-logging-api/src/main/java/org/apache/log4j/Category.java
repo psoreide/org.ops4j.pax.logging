@@ -531,13 +531,13 @@ public abstract class Category
 //        return this.level;
 //    }
 //
-//    /**
-//     * @deprecated Please use {@link Logger#getRootLogger()} instead.
-//     */
-//    public static Category getRoot()
-//    {
-//        return LogManager.getRootLogger();
-//    }
+    /**
+     * @deprecated Please use {@link Logger#getRootLogger()} instead.
+     */
+    public static Category getRoot()
+    {
+        return Logger.getRootLogger();
+    }
 
 //    /**
 //     * Return the <em>inherited</em> {@link ResourceBundle} for this
