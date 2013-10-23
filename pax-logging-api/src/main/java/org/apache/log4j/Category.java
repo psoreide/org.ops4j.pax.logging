@@ -50,6 +50,8 @@
 
 package org.apache.log4j;
 
+import java.util.Enumeration;
+
 import org.ops4j.pax.logging.PaxLogger;
 
 /**
@@ -328,25 +330,27 @@ public abstract class Category
 //        return false;
 //    }
 
-//    /**
-//     * Get the appenders contained in this category as an {@link
-//     * Enumeration}. If no appenders can be found, then a {@link NullEnumeration}
-//     * is returned.
-//     *
-//     * @return Enumeration An enumeration of the appenders in this category.
-//     */
-//    synchronized
-//    public Enumeration getAllAppenders()
-//    {
-//        if( aai == null )
-//        {
-//            return NullEnumeration.getInstance();
-//        }
-//        else
-//        {
-//            return aai.getAllAppenders();
-//        }
-//    }
+    /**
+     * Get the appenders contained in this category as an {@link
+     * Enumeration}. If no appenders can be found, then a {@link NullEnumeration}
+     * is returned.
+     *
+     * @return Enumeration An enumeration of the appenders in this category.
+     */
+    synchronized
+    public Enumeration getAllAppenders()
+    {
+    	return new Enumeration() {
+
+			public boolean hasMoreElements() {
+				return false;
+			}
+
+			public Object nextElement() {
+				return null;
+			}
+		};
+    }
 //
 //    /**
 //     * Look for the appender named as <code>name</code>.
