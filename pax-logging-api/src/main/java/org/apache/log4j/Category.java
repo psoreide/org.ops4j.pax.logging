@@ -723,6 +723,107 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
         return m_delegate.getName();
     }
 
+//    /**
+//     * Returns the parent of this category. Note that the parent of a
+//     * given category may change during the lifetime of the category.
+//     *
+//     * <p>The root category will return <code>null</code>.
+//     *
+//     * @since 1.2
+//     */
+//    final public Category getParent()
+//    {
+//        return this.parent;
+//    }
+//
+//    /**
+//     * Returns the assigned {@link Level}, if any, for this Category.
+//     *
+//     * @return Level - the assigned Level, can be <code>null</code>.
+//     */
+//    final
+//    public Level getLevel()
+//    {
+//        return this.level;
+//    }
+//
+//    /**
+//     * @deprecated Please use {@link #getLevel} instead.
+//     */
+//    final
+//    public Level getPriority()
+//    {
+//        return this.level;
+//    }
+//
+    /**
+     * @deprecated Please use {@link Logger#getRootLogger()} instead.
+     */
+    public static Category getRoot()
+    {
+        return Logger.getRootLogger();
+    }
+
+//    /**
+//     * Return the <em>inherited</em> {@link ResourceBundle} for this
+//     * category.
+//     *
+//     * <p>This method walks the hierarchy to find the appropriate
+//     * resource bundle. It will return the resource bundle attached to
+//     * the closest ancestor of this category, much like the way
+//     * priorities are searched. In case there is no bundle in the
+//     * hierarchy then <code>null</code> is returned.
+//     *
+//     * @since 0.9.0
+//     */
+//    public ResourceBundle getResourceBundle()
+//    {
+//        for( Category c = this; c != null; c = c.parent )
+//        {
+//            if( c.resourceBundle != null )
+//            {
+//                return c.resourceBundle;
+//            }
+//        }
+//        // It might be the case that there is no resource bundle
+//        return null;
+//    }
+
+//    /**
+//     * Returns the string resource coresponding to <code>key</code> in
+//     * this category's inherited resource bundle. See also {@link
+//     * #getResourceBundle}.
+//     *
+//     * <p>If the resource cannot be found, then an {@link #error error}
+//     * message will be logged complaining about the missing resource.
+//     */
+//    protected String getResourceBundleString( String key )
+//    {
+//        ResourceBundle rb = getResourceBundle();
+//        // This is one of the rare cases where we can use logging in order
+//        // to report errors from within log4j.
+//        if( rb == null )
+//        {
+//            //if(!hierarchy.emittedNoResourceBundleWarning) {
+//            //error("No resource bundle has been set for category "+name);
+//            //hierarchy.emittedNoResourceBundleWarning = true;
+//            //}
+//            return null;
+//        }
+//        else
+//        {
+//            try
+//            {
+//                return rb.getString( key );
+//            }
+//            catch( MissingResourceException mre )
+//            {
+//                error( "No resource is associated with key \"" + key + "\"." );
+//                return null;
+//            }
+//        }
+//    }
+
     /**
      * Returns the parent of this category. Note that the parent of a given category may change during the lifetime of
      * the category.
@@ -750,13 +851,6 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      */
     final public Level getPriority() {
         return getEffectiveLevel();
-    }
-
-    /**
-     * @deprecated Please use {@link Logger#getRootLogger()} instead.
-     */
-    final public static Category getRoot() {
-        throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
     }
 
     /**
