@@ -36,6 +36,7 @@ import org.apache.log4j.spi.AppenderAttachable;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.LoggerRepository;
 import org.apache.log4j.helpers.NullEnumeration;
+
 import org.ops4j.pax.logging.PaxLogger;
 import org.ops4j.pax.logging.PaxLoggingManager;
 import org.ops4j.pax.logging.PaxLoggingManagerAwareLogger;
@@ -556,21 +557,60 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
         log(fqcn, level, message, t);
     }
 
+//    /**
+//     * Get the additivity flag for this Category instance.
+//     *
+//     * @return always return false.
+//     */
+//    public boolean getAdditivity()
+//    {
+//        return false;
+//    }
+
+    /**
+     * Get the appenders contained in this category as an {@link
+     * Enumeration}. If no appenders can be found, then a {@link NullEnumeration}
+     * is returned.
+     *
+     * @return Enumeration An enumeration of the appenders in this category.
+     */
+    synchronized
+    public Enumeration getAllAppenders()
+    {
+    	return new Enumeration() {
+
+			public boolean hasMoreElements() {
+				return false;
+			}
+
+			public Object nextElement() {
+				return null;
+			}
+		};
+    }
+//
+//    /**
+//     * Look for the appender named as <code>name</code>.
+//     *
+//     * <p>Return the appender with that name if in the list. Return
+//     * <code>null</code> otherwise.
+//     */
+//    synchronized
+//    public Appender getAppender( String name )
+//    {
+//        if( aai == null || name == null )
+//        {
+//            return null;
+//        }
+//
+//        return aai.getAppender( name );
+//    }
+
     /**
      * Get the additivity flag for this Category instance.
      */
     public boolean getAdditivity() {
         return additive;
-    }
-
-    /**
-     * Get the appenders contained in this category as an {@link Enumeration}. If no appenders can be found, then a
-     * {@link NullEnumeration} is returned.
-     *
-     * @return Enumeration An enumeration of the appenders in this category.
-     */
-    synchronized public Enumeration getAllAppenders() {
-        return NullEnumeration.getInstance();
     }
 
     /**
