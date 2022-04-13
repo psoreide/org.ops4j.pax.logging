@@ -18,6 +18,7 @@
 package org.apache.log4j;
 
 import org.apache.log4j.spi.LoggerRepository;
+import org.apache.log4j.helpers.NullEnumeration;
 import org.apache.log4j.spi.LoggerFactory;
 import org.apache.log4j.spi.RepositorySelector;
 
@@ -107,7 +108,7 @@ public class LogManager {
     }
 
     static public LoggerRepository getLoggerRepository() {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+		return null;
 	}
 
     /**
@@ -143,11 +144,11 @@ public class LogManager {
     }
 
     public static Logger exists(final String name) {
-		throw new UnsupportedOperationException("Operation not supported in pax-logging");
+		return Logger.getLogger(name);
     }
 
     public static Enumeration getCurrentLoggers() {
-		throw new UnsupportedOperationException("Operation not supported in pax-logging");
+		return NullEnumeration.getInstance();
     }
 
     public static void shutdown() {
