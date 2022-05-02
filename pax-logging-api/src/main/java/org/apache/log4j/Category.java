@@ -192,7 +192,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * won't be added again.
      */
     synchronized public void addAppender(Appender newAppender) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
@@ -486,7 +486,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 0.8.5
      */
     public static Logger exists(String name) {
-	throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+    	return Logger.getLogger(name);
     }
 
     /**
@@ -601,7 +602,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * otherwise.
      */
     synchronized public Appender getAppender(String name) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
+    	return null;
     }
 
     /**
@@ -640,7 +642,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @deprecated Please use the the {@link #getEffectiveLevel} method instead.
      */
     public Priority getChainedPriority() {
-	throw new UnsupportedOperationException("Deprecated in log4j since Mar 12, 2002");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Mar 12, 2002");
+    	 return getEffectiveLevel();
     }
 
     /**
@@ -654,7 +657,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @deprecated Please use {@link LogManager#getCurrentLoggers()} instead.
      */
     public static Enumeration getCurrentCategories() {
-	throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+    	return LogManager.getCurrentLoggers();
     }
 
     /**
@@ -665,7 +669,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 1.0
      */
     public static LoggerRepository getDefaultHierarchy() {
-	throw new UnsupportedOperationException("Deprecated in log4j since Nov 18, 2001");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Nov 18, 2001");
+    	return LogManager.getLoggerRepository();
     }
 
     /**
@@ -677,7 +682,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 1.1
      */
     public LoggerRepository getHierarchy() {
-	throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+    	return getLoggerRepository();
     }
 
     /**
@@ -744,7 +750,8 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @deprecated Please use {@link Logger#getRootLogger()} instead.
      */
     final public static Category getRoot() {
-	throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+	//throw new UnsupportedOperationException("Deprecated in log4j since Sep 5, 2001");
+    	return Logger.getRootLogger();
     }
 
     /**
@@ -1038,7 +1045,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * This is useful when re-reading configuration information.
      */
     synchronized public void removeAllAppenders() {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
@@ -1047,7 +1054,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 0.8.2
      */
     synchronized public void removeAppender(Appender appender) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
@@ -1057,7 +1064,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 0.8.2
      */
     synchronized public void removeAppender(String name) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
@@ -1074,7 +1081,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * access is MANDATORY here.
      */
     final void setHierarchy(LoggerRepository repository) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
@@ -1118,7 +1125,7 @@ public abstract class Category implements AppenderAttachable, PaxLoggingManagerA
      * @since 0.8.4
      */
     public void setResourceBundle(ResourceBundle bundle) {
-	throw new UnsupportedOperationException("Operation not supported in pax-logging");
+	//throw new UnsupportedOperationException("Operation not supported in pax-logging");
     }
 
     /**
