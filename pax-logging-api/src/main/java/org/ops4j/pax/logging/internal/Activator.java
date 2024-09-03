@@ -118,9 +118,9 @@ public class Activator implements BundleActivator {
         commonsLogger.info("Enabling Apache Commons Logging API support.");
 
         // Apache Juli Logging
-        org.apache.juli.logging.LogFactory.setPaxLoggingManager(manager);
+        //org.apache.juli.logging.LogFactory.setPaxLoggingManager(manager);
         org.apache.juli.logging.Log juliLogger = org.apache.juli.logging.LogFactory.getLog(name);
-        juliLogger.info("Enabling JULI Logger API support.");
+        //juliLogger.info("Enabling JULI Logger API support.");
 
         // Avalon Logging
         org.ops4j.pax.logging.avalon.AvalonLogFactory.setPaxLoggingManager(manager);
@@ -181,9 +181,9 @@ public class Activator implements BundleActivator {
         commonsLogger.info("Disabling Apache Commons Logging API support.");
         org.apache.commons.logging.LogFactory.setPaxLoggingManager(null);
 
-        org.apache.juli.logging.Log juliLogger = org.apache.juli.logging.LogFactory.getLog(name);
-        juliLogger.info("Disabling JULI Logger API support.");
-        org.apache.juli.logging.LogFactory.setPaxLoggingManager(null);
+        //org.apache.juli.logging.Log juliLogger = org.apache.juli.logging.LogFactory.getLog(name);
+        //juliLogger.info("Disabling JULI Logger API support.");
+        //org.apache.juli.logging.LogFactory.setPaxLoggingManager(null);
 
         org.apache.avalon.framework.logger.Logger avalonLogger = org.ops4j.pax.logging.avalon.AvalonLogFactory.getLogger(name);
         avalonLogger.info("Disabling Avalon Logger API support.");
